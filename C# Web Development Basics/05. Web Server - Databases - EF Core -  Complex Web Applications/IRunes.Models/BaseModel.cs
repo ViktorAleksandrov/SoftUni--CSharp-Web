@@ -1,0 +1,7 @@
+﻿namespace IRunes.Models
+{
+    public abstract class BaseModel
+    {
+        public string Id { get; set; }
+    }
+}
