@@ -1,0 +1,19 @@
+﻿<div class="container w-50">
+	<h1 class="text-center text-success">Create Album</h1>
+	<hr class="my-3" style="height: 2px; border-color: green; background-color: green;" />
+	<form method="post" action="/Albums/Create">
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" class="form-control" name="name" placeholder="Name..." />
+		</div>
+		<div class="form-group">
+			<label>Cover</label>
+			<input type="text" class="form-control" name="cover" placeholder="Cover..." />
+		</div>
+		<hr class="my-4" style="height: 2px; border-color: green; background-color: green;" />
+		<div class="d-flex justify-content-around">
+			<input type="submit" class="btn btn-success text-left" value="Create" />
+			<a href="/Albums/All" class="btn btn-success text-right">Back To All</a>
+		</div>
+	</form>
+</div>
