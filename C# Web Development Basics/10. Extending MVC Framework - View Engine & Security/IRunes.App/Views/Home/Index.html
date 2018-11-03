@@ -1,0 +1,13 @@
+﻿<div class="jumbotron bg-success text-white">
+	<div style="display:@Model.IsNotAuthenticated">
+		<h1>Welcome to IRunes</h1>
+		<hr class="my-3" style="height: 2px; border-color: white; background-color: white;" />
+		<h2><a class="text-warning" href="/Users/Login">Login</a> if you have an account.</h2>
+		<h2><a class="text-warning" href="/Users/Register">Register</a> if you don't.</h2>
+	</div>
+	<div style="display:@Model.IsAuthenticated">
+		<h1>Welcome, <span class="text-warning">@Model.username</span></h1>
+		<hr class="my-3" style="height: 2px; border-color: white; background-color: white;" />
+		<h2>IRunes wished you a fun experience.</h2>
+	</div>
+</div>

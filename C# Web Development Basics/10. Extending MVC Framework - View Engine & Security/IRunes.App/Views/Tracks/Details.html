@@ -1,0 +1,10 @@
+﻿<div class="container w-50">
+	<div class="text-center">
+		<h3>Track Name: @Model.name</h3>
+		<h3>Track Price: &#36;@Model.price}</h3>
+		<hr style="height: 2px" class="bg-success" />
+		<iframe src="@Model.link" width="640" height="360"></iframe>
+		<hr style="height: 2px" class="bg-success" />
+		<a href="/Albums/Details?id=@Model.albumId" class="btn btn-success text-center">Back To Album</a>
+	</div>
+</div>

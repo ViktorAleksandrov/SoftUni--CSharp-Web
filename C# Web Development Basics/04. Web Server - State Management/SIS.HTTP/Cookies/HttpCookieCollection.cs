@@ -35,7 +35,7 @@ namespace SIS.HTTP.Cookies
 
         public override string ToString()
         {
-            return string.Join(", ", this.cookies.Values);
+            return string.Join("; ", this.cookies.Values);
         }
     }
 }

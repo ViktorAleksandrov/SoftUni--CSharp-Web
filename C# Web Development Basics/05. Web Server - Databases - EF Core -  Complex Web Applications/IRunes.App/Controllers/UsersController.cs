@@ -18,12 +18,12 @@ namespace IRunes.App.Controllers
             this.hashService = new HashService();
         }
 
-        public IHttpResponse Register(IHttpRequest request)
+        public IHttpResponse Register()
         {
             return this.View();
         }
 
-        public IHttpResponse PostRegister(IHttpRequest request)
+        public IHttpResponse Register(IHttpRequest request)
         {
             string username = request.FormData["username"].ToString().Trim();
             string password = request.FormData["password"].ToString();
@@ -59,12 +59,12 @@ namespace IRunes.App.Controllers
             return response;
         }
 
-        public IHttpResponse Login(IHttpRequest request)
+        public IHttpResponse Login()
         {
             return this.View();
         }
 
-        public IHttpResponse PostLogin(IHttpRequest request)
+        public IHttpResponse Login(IHttpRequest request)
         {
             string usernameOrEmail = request.FormData["usernameOrEmail"].ToString().Trim();
             string password = request.FormData["password"].ToString();

@@ -25,12 +25,7 @@ namespace SIS.HTTP.Headers
 
         public HttpHeader GetHeader(string key)
         {
-            if (!this.ContainsHeader(key))
-            {
-                return null;
-            }
-
-            return this.headers[key];
+            return this.headers.GetValueOrDefault(key, null);
         }
 
         public override string ToString()

@@ -1,0 +1,35 @@
+﻿<div style="display: @Model.display">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 alert alert-danger text-center">
+			@Model.errorMessage
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>
+
+<div class="container w-50">
+	<h1 class="text-center text-success">Create Track</h1>
+	<hr class="my-3" style="height: 2px; border-color: green; background-color: green;" />
+	<form method="post" action="/Tracks/Create?albumid=@Model.albumId">
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" class="form-control" name="name" placeholder="Name..." />
+		</div>
+		<div class="form-row">
+			<div class="col-md-6 text-left">
+				<label>Link</label>
+				<input type="text" class="form-control" name="link" placeholder="Link..." />
+			</div>
+			<div class="col-md-6 text-left">
+				<label>Price</label>
+				<input type="text" class="form-control" name="price" placeholder="Price..." />
+			</div>
+		</div>
+		<hr class="my-4" style="height: 2px; border-color: green; background-color: green;" />
+		<div class="d-flex justify-content-around">
+			<input type="submit" class="btn btn-success text-left" value="Create" />
+			<a href="/Albums/Details?id=@Model.albumId" class="btn btn-success text-right">Back To Album</a>
+		</div>
+	</form>
+</div>

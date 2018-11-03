@@ -10,6 +10,9 @@ namespace SIS.HTTP.Extensions
 
             switch (statusCode)
             {
+                case HttpResponseStatusCode.Ok:
+                    result = $"{(int)statusCode} OK";
+                    break;
                 case HttpResponseStatusCode.SeeOther:
                     result = $"{(int)statusCode} See Other";
                     break;

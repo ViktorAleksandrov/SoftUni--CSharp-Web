@@ -130,33 +130,35 @@ namespace SIS.HTTP.Requests
         {
             string[] urlParts = this.Url.Split('?', StringSplitOptions.RemoveEmptyEntries);
 
-            if (urlParts.Length > 1)
+            if (urlParts.Length < 2)
             {
-                string queryString = urlParts[1];
+                return;
+            }
 
-                if (queryString.Contains('#'))
-                {
-                    queryString = queryString
-                        .Split('#', StringSplitOptions.RemoveEmptyEntries)
-                        .FirstOrDefault();
-                }
+            string queryString = urlParts[1];
 
-                string[] queryParameters = queryString?.Split('&', StringSplitOptions.RemoveEmptyEntries);
+            if (queryString.Contains('#'))
+            {
+                queryString = queryString
+                    .Split('#', StringSplitOptions.RemoveEmptyEntries)
+                    .FirstOrDefault();
+            }
 
-                if (!this.IsValidRequestQueryString(queryString, queryParameters))
-                {
-                    throw new BadRequestException();
-                }
+            string[] queryParameters = queryString?.Split('&', StringSplitOptions.RemoveEmptyEntries);
 
-                foreach (string parameter in queryParameters)
-                {
-                    string[] parameterParts = parameter.Split('=', StringSplitOptions.RemoveEmptyEntries);
+            if (!this.IsValidRequestQueryString(queryString, queryParameters))
+            {
+                throw new BadRequestException();
+            }
 
-                    string parameterKey = parameterParts[0];
-                    string parameterValue = parameterParts[1];
+            foreach (string parameter in queryParameters)
+            {
+                string[] parameterParts = parameter.Split('=', StringSplitOptions.RemoveEmptyEntries);
 
-                    this.QueryData[parameterKey] = parameterValue;
-                }
+                string parameterKey = parameterParts[0];
+                string parameterValue = parameterParts[1];
+
+                this.QueryData[parameterKey] = parameterValue;
             }
         }
 

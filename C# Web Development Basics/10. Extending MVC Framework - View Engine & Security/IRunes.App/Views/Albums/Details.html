@@ -1,0 +1,16 @@
+﻿<div class="form-row">
+	<div class="col-md-4 text-center">
+		<img src="@Model.cover" height="300" width="450" />
+		<h3>Album Name: @Model.name</h3>
+		<h3>Album Price: &#36;@Model.price</h3>
+		<div class="d-flex justify-content-between">
+			<a href="/Tracks/Create?albumid=@Model.albumId" class="btn btn-success text-left">Create Track</a>
+			<a href="/Albums/All" class="btn btn-success text-right">Back To All</a>
+		</div>
+	</div>
+	<div class="col-md-2"></div>
+	<div class="col-md-6">
+		<h2><b>Tracks</b></h2>
+		@Model.tracksList
+	</div>
+</div>

@@ -1,0 +1,27 @@
+﻿<div style="display: @Model.display">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 alert alert-danger text-center">
+			@Model.errorMessage
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>
+
+<div class="container w-50">
+	<h1 class="text-center text-success">Login</h1>
+	<hr class="my-3" style="height: 2px; border-color: green; background-color: green;" />
+	<form method="post" action="/Users/Login">
+		<div class="form-group">
+			<label>Username / Email</label>
+			<input type="text" class="form-control" name="username" placeholder="Username / Email...">
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" class="form-control" name="password" placeholder="Password...">
+		</div>
+		<div class="text-center">
+			<button type="submit" class="btn btn-success">Login</button>
+		</div>
+	</form>
+</div>

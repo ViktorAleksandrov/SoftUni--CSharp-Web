@@ -6,9 +6,9 @@ using SIS.WebServer.Routing;
 
 namespace IRunes.App
 {
-    class Launcher
+    public class Launcher
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var serverRoutingTable = new ServerRoutingTable();
 
@@ -28,16 +28,16 @@ namespace IRunes.App
                 request => new RedirectResult("/");
 
             serverRoutingTable.Routes[HttpRequestMethod.Get]["/Users/Register"] =
-                request => new UsersController().Register(request);
+                request => new UsersController().Register();
 
             serverRoutingTable.Routes[HttpRequestMethod.Post]["/Users/Register"] =
-                request => new UsersController().PostRegister(request);
+                request => new UsersController().Register(request);
 
             serverRoutingTable.Routes[HttpRequestMethod.Get]["/Users/Login"] =
-                request => new UsersController().Login(request);
+                request => new UsersController().Login();
 
             serverRoutingTable.Routes[HttpRequestMethod.Post]["/Users/Login"] =
-                request => new UsersController().PostLogin(request);
+                request => new UsersController().Login(request);
 
             serverRoutingTable.Routes[HttpRequestMethod.Get]["/Users/Logout"] =
                 request => new UsersController().Logout(request);

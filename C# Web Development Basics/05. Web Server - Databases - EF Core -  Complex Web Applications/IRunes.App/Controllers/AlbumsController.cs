@@ -20,7 +20,7 @@ namespace IRunes.App.Controllers
 
             DbSet<Album> albums = this.Db.Albums;
 
-            string listOfAlbums = string.Empty;
+            var listOfAlbums = new StringBuilder(); 
 
             if (albums.Any())
             {
@@ -29,10 +29,10 @@ namespace IRunes.App.Controllers
                     string albumHtml =
                         $@"<p><strong><a href =""/Albums/Details?id={album.Id}"">{album.Name}</a></strong></p>";
 
-                    listOfAlbums += albumHtml;
+                    listOfAlbums.Append(albumHtml);
                 }
 
-                this.ViewBag["albumsList"] = listOfAlbums;
+                this.ViewBag["albumsList"] = listOfAlbums.ToString();
             }
             else
             {
@@ -100,11 +100,11 @@ namespace IRunes.App.Controllers
             albumDetails.Append($@"<h3>Name: {album.Name}</h3></ br>");
             albumDetails.Append($@"<h3>Price: &#36;{priceWithComma}</h3></ br>");
 
-            var listOfTracks = new StringBuilder();
+            var tracksList = new StringBuilder();
 
             if (album.Tracks.Any())
             {
-                listOfTracks.Append("<ul>");
+                tracksList.Append("<ul>");
 
                 int songCounter = 1;
 
@@ -112,15 +112,15 @@ namespace IRunes.App.Controllers
                 {
                     string trackHtml = $@"<li><b>{songCounter++}</b>. <em><a href=""/Tracks/Details?albumId={album.Id}&trackId={track.Id}"">{track.Name}</a></em></ li>";
 
-                    listOfTracks.Append(trackHtml);
+                    tracksList.Append(trackHtml);
                 }
 
-                listOfTracks.Append("</ul>");
+                tracksList.Append("</ul>");
             }
 
             this.ViewBag["albumDetails"] = albumDetails.ToString();
             this.ViewBag["albumId"] = albumId;
-            this.ViewBag["tracksList"] = listOfTracks.ToString();
+            this.ViewBag["tracksList"] = tracksList.ToString();
 
             return this.View();
         }
