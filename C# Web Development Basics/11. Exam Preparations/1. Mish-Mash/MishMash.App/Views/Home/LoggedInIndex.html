@@ -1,0 +1,18 @@
+﻿<main class="mt-3 mb-4">
+	<h4 class="text-mishmash text-center my-2">Welcome, <span style="display: @Model.admin">Admin-</span>@Model.Username!</h4>
+	<h5 class="text-mishmash">Your Channels</h5>
+	<hr class="hr-2 bg-mishmash" />
+	<div class="row">
+		@Model.Collection.MyChannels(@Item)
+	</div>
+	<h5 class="text-mishmash">Suggested</h5>
+	<hr class="hr-2 bg-mishmash" />
+	<div class="row">
+		@Model.Collection.Suggested(@Item)
+	</div>
+	<h5 class="text-mishmash">See Other</h5>
+	<hr class="hr-2 bg-mishmash" />
+	<div class="row">
+		@Model.Collection.SeeOther(@Item)
+	</div>
+</main>

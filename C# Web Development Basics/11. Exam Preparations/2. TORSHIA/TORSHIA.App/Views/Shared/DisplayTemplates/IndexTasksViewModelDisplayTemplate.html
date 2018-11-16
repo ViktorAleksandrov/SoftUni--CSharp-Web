@@ -1,0 +1,10 @@
+﻿<div class="col mx-3 bg-torshia rounded">
+	<h6 class="text-white text-center my-3">@Model.Title</h6>
+	<hr class="bg-white hr-2 w-75">
+	<h6 class="text-white text-center my-4">Level: @Model.Level</h6>
+	<hr class="bg-white hr-2 w-75">
+	<div class="follow-button-holder d-flex justify-content-between w-50 mx-auto my-3">
+		<a href="/Tasks/Report?taskId=@Model.Id"><h6 class="text-center text-white mr-1">Report</h6></a>
+		<a href="/Tasks/Details?id=@Model.Id"><h6 class="text-center text-white ml-2">Details</h6></a>
+	</div>
+</div>

@@ -1,0 +1,42 @@
+﻿<h2 class="text-center">Delete Product</h2>
+<hr class="hr-2 bg-dark" />
+<div class="mx-auto half-width">
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input type="text" class="form-control" id="name" value="@Model.Name" name="Name" disabled>
+	</div>
+	<div class="form-group">
+		<label for="price">Price</label>
+		<input type="text" class="form-control" id="price" value="@Model.Price" name="Price" disabled>
+	</div>
+	<div class="form-group">
+		<label for="description">Description</label>
+		<textarea class="form-control" id="description" name="Description" disabled>@Model.Description</textarea>
+	</div>
+	<h4 class="text-center">Product Type</h4>
+	<hr class="hr-2 bg-dark half-width" />
+	<div class="row justify-content-around">
+		<label>
+			<input type="radio" name="Type" id="food" value="Food" autocomplete="off" @Model.Food disabled /> Food
+		</label>
+		<label>
+			<input type="radio" name="Type" id="domestic" value="Domestic" autocomplete="off" @Model.Domestic disabled /> Domestic
+		</label>
+		<label>
+			<input type="radio" name="Type" id="health" value="Health" autocomplete="off" @Model.Health disabled /> Health
+		</label>
+		<label>
+			<input type="radio" name="Type" id="cosmetic" value="Cosmetic" autocomplete="off" @Model.Cosmetic disabled /> Cosmetic
+		</label>
+		<label>
+			<input type="radio" name="Type" id="other" value="Other" autocomplete="off" @Model.Other disabled /> Other
+		</label>
+	</div>
+</div>
+<hr class="hr-2 bg-dark half-width" />
+<form class="mx-auto half-width" method="post" action="/Products/Delete?Id=@Model.Id">
+	<div class="button-holder d-flex justify-content-around col-md-6 offset-md-3">
+		<button type="submit" class="btn chushka-bg-color">Delete</button>
+		<a class="btn chushka-bg-color" href="/Products/Details?id=@Model.Id">Cancel</a>
+	</div>
+</form>
