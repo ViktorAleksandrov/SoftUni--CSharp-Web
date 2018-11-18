@@ -1,0 +1,42 @@
+﻿<div style="display:@Model.NotLoggedIn" class="jumbotron mt-3 bg-panda">
+	<h1 class="text-white">Welcome to PANDA Delivery Services.</h1>
+	<hr class="bg-white hr-2" />
+	<h3 class="text-white"><a href="/Users/Login">Login</a> if you have an account.</h3>
+	<h3 class="text-white"><a href="/Users/Register">Register</a> if you don't.</h3>
+</div>
+<div style="display:@Model.LoggedInUser">
+	<h2 class="text-center">Hello, @Model.Username!</h2>
+	<hr class="hr-2 bg-panda" />
+	<div class="row d-flex justify-content-between bg-white">
+		<div class="col-md-3 pr-1">
+			<h3 class="text-center">Pending</h3>
+			<div class="border-panda">@Model.Collection.Pending(@Item)</div>
+		</div>
+		<div class="col-md-3 px-1">
+			<h3 class="text-center">Shipped</h3>
+			<div class="border-panda">@Model.Collection.Shipped(@Item)</div>
+		</div>
+		<div class="col-md-3 pl-1">
+			<h3 class="text-center">Delivered</h3>
+			<div class="border-panda">@Model.Collection.Delivered(@Item)</div>
+		</div>
+	</div>
+</div>
+<div style="display:@Model.LoggedInAdmin">
+	<h2 class="text-center">Hello, Administrator @Model.Username!</h2>
+	<hr class="hr-2 bg-panda" />
+	<div class="row d-flex justify-content-between bg-white">
+		<div class="col-md-3 pr-1">
+			<h3 class="text-center">Pending</h3>
+			<div class="border-panda">@Model.Collection.Pending(@Item)</div>
+		</div>
+		<div class="col-md-3 px-1">
+			<h3 class="text-center">Shipped</h3>
+			<div class="border-panda">@Model.Collection.Shipped(@Item)</div>
+		</div>
+		<div class="col-md-3 pl-1">
+			<h3 class="text-center">Delivered</h3>
+			<div class="border-panda">@Model.Collection.Delivered(@Item)</div>
+		</div>
+	</div>
+</div>
