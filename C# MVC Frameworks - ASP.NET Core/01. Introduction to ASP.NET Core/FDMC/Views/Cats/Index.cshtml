@@ -1,0 +1,16 @@
+﻿@model IEnumerable<FDMC.ViewModels.IndexCatViewModel>
+
+<h1>Fluffy Duffy Munchkin Cats</h1>
+
+<ul>
+	@foreach (var cat in Model)
+	{
+		<li>
+			<a href="/cats/@cat.Id">@cat.Name</a>
+		</li>
+	}
+</ul>
+
+<a href="/cats/add">
+	<input type="button" value="Add Cat" />
+</a>

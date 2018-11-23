@@ -1,0 +1,19 @@
+﻿@model FDMC.ViewModels.CatViewModel
+
+<h1>Add Cat</h1>
+
+<form method="post" action="/cats/add">
+	<div>
+		Name: <input type="text" name="Name" />
+	</div>
+	<div>
+		Age: <input type="text" name="Age" />
+	</div>
+	<div>
+		Breed: <input type="text" name="Breed" />
+	</div>
+	<div>
+		ImageUrl: <input type="text" name="ImageUrl" />
+	</div>
+	<input type="submit" value="Add Cat" />
+</form>
