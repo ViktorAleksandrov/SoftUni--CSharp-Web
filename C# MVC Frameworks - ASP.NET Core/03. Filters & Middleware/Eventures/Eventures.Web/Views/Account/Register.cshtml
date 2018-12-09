@@ -1,0 +1,56 @@
+﻿@model RegisterViewModel
+
+@{
+	ViewData["Title"] = "Register";
+}
+
+<h1 class="text-center mt-4 mb-4">Register</h1>
+<hr class="hr-3 eventures-bg-color half-width" />
+<form class="mx-auto half-width" method="post">
+	<div class="form-row">
+		<div class="form-group col mr-3 text-center">
+			<label asp-for="Username"></label>
+			<input asp-for="Username" class="form-control" placeholder="Username...">
+			<span asp-validation-for="Username" class="text-danger"></span>
+		</div>
+		<div class="form-group col ml-3 text-center">
+			<label asp-for="Email"></label>
+			<input asp-for="Email" class="form-control" placeholder="Email...">
+			<span asp-validation-for="Email" class="text-danger"></span>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col mr-3 text-center">
+			<label asp-for="Password"></label>
+			<input asp-for="Password" class="form-control" placeholder="Password...">
+			<span asp-validation-for="Password" class="text-danger"></span>
+		</div>
+		<div class="form-group col ml-3 text-center">
+			<label asp-for="ConfirmPassword"></label>
+			<input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password...">
+			<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+		</div>
+	</div>
+	<hr class="hr-3 eventures-bg-color" />
+	<div class="form-row">
+		<div class="form-group col mr-3 text-center">
+			<label asp-for="FirstName"></label>
+			<input asp-for="FirstName" class="form-control" placeholder="First Name...">
+			<span asp-validation-for="FirstName" class="text-danger"></span>
+		</div>
+		<div class="form-group col ml-3 text-center">
+			<label asp-for="LastName"></label>
+			<input asp-for="LastName" class="form-control" placeholder="Last Name...">
+			<span asp-validation-for="LastName" class="text-danger"></span>
+		</div>
+	</div>
+	<div class="form-group text-center pb-3">
+		<label asp-for="UCN"></label>
+		<input asp-for="UCN" class="form-control" placeholder="Universal Citizen Number...">
+		<span asp-validation-for="UCN" class="text-danger"></span>
+	</div>
+	<hr class="hr-3 mt-4 eventures-bg-color" />
+	<div class="button-holder d-flex justify-content-center mb-3 mt-4">
+		<button type="submit" class="btn eventures-bg-color">Register</button>
+	</div>
+</form>

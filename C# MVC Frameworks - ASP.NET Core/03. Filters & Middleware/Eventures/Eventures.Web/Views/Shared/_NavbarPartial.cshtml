@@ -1,0 +1,40 @@
+<ul class="navbar-nav mr-auto">
+	<li class="nav-item">
+		<a class="nav-link nav-link-dark" asp-controller="Home" asp-action="Index">Home</a>
+	</li>
+	@if (this.User.Identity.IsAuthenticated)
+	{
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle nav-link-dark" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Events
+			</a>
+			<div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" asp-controller="Events" asp-action="All">All Events</a>
+				@if (this.User.IsInRole("ADMIN"))
+				{
+					<a class="dropdown-item" asp-controller="Events" asp-action="Create">Create Event</a>
+				}
+			</div>
+		</li>
+	}
+</ul>
+<ul class="navbar-nav navbar-right">
+	@if (this.User.Identity.IsAuthenticated)
+	{
+		<li class="nav-item">
+			<a class="nav-link nav-link-dark">Hello @this.User.Identity.Name!</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link nav-link-dark" asp-controller="Account" asp-action="Logout">Logout</a>
+		</li>
+	}
+	else
+	{
+		<li class="nav-item">
+			<a class="nav-link nav-link-dark" asp-controller="Account" asp-action="Register">Register</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link nav-link-dark" asp-controller="Account" asp-action="Login">Login</a>
+		</li>
+	}
+</ul>

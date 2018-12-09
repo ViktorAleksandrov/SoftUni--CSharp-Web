@@ -1,0 +1,37 @@
+﻿@model IEnumerable<AllEventsViewModel>
+
+@{
+	ViewData["Title"] = "All Events";
+}
+
+<h2 class="text-center mb-1">All Events</h2>
+<div class="container-fluid app-sizing px-0">
+	<hr class="hr-3 eventures-bg-color" />
+	<table class="table mx-auto table-hover">
+		<thead>
+			<tr class="row" style="font-weight: bold">
+				<th class="col-md-1">#</th>
+				<th class="col-md-3">Name</th>
+				<th class="col-md-3">Start</th>
+				<th class="col-md-3">End</th>
+				<th class="col-md-2">Place</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			@{ int counter = 1; }
+
+			@foreach (var eventureEvent in Model)
+			{
+				<tr class="row">
+					<th class="col-md-1">@(counter++)</th>
+					<td class="col-md-3">@eventureEvent.Name</td>
+					<td class="col-md-3">@eventureEvent.Start</td>
+					<td class="col-md-3">@eventureEvent.End</td>
+					<td class="col-md-2">@eventureEvent.Place</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+	<hr class="hr-3 eventures-bg-color" />
+</div>

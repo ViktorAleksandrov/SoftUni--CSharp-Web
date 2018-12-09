@@ -1,0 +1,32 @@
+﻿@{
+	ViewData["Title"] = "Home";
+}
+
+<div class="jumbotron eventures-bg-color">
+	@if (this.User.Identity.IsAuthenticated)
+	{
+		<div class="text-center">
+			@if (this.User.IsInRole("ADMIN"))
+			{
+				<h2>Greetings, Administrator - @this.User.Identity.Name!</h2>
+				<hr class="hr-3 bg-color-grey" />
+				<h4 class="text-color-grey">Enjoy your work.</h4>
+			}
+			else
+			{
+				<h2>Welcome, @this.User.Identity.Name!</h2>
+				<hr class="hr-3 bg-color-grey" />
+				<h4 class="text-color-grey">Eventures wishes you an exciting experience.</h4>
+			}
+		</div>
+	}
+	else
+	{
+		<h2>Eventures - The best ticket service in the world.</h2>
+		<hr class="hr-3 bg-dark" />
+		<h4><a asp-controller="Account" asp-action="Login">Login</a> to start "eventing".</h4>
+		<p>
+			<h4><a asp-controller="Account" asp-action="Register">Register</a> if you don't have an account.</h4>
+		</p>
+	}
+</div>
