@@ -1,0 +1,43 @@
+﻿@model LoginUserBindingModel
+
+@{
+	ViewData["Title"] = "Login";
+}
+
+<div class="container text-center">
+	<h1 class="mt-4 mb-3">@ViewData["Title"]</h1>
+	<div class="row text-center">
+		<div class="col-md-4 offset-md-4">
+			<form class="mx-auto" method="post">
+				<hr class="hr-3 eventures-bg-color" />
+				<div class="form-group">
+					<label asp-for="Username"></label>
+					<input asp-for="Username" class="form-control" placeholder="Username...">
+					<span asp-validation-for="Username" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Password"></label>
+					<input asp-for="Password" class="form-control" placeholder="Password...">
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+				<hr class="hr-2 eventures-bg-color mt-4" />
+				<div class="form-group">
+					<input asp-for="RememberMe">
+					<label asp-for="RememberMe" style="font-weight: unset; margin-bottom: 0"></label>
+				</div>
+				<hr class="hr-3 eventures-bg-color" />
+				<div class="d-flex justify-content-center mt-4 mb-3">
+					<button type="submit" class="btn eventures-bg-color">@ViewData["Title"]</button>
+				</div>
+				<div class="form-group">
+					<p>
+						<a href="">Forgot your password?</a>
+					</p>
+					<p>
+						<a asp-controller="Account" asp-action="Register">Register as a new user</a>
+					</p>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
