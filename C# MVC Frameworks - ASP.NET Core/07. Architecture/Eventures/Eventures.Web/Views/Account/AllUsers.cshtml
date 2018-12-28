@@ -1,0 +1,42 @@
+﻿@model IEnumerable<UserViewModel>
+
+@{
+	ViewData["Title"] = "Change User Role";
+}
+
+<h3 class="text-center mb-1 font-weight-bold">@ViewData["Title"]</h3>
+<div class="container-fluid app-sizing px-0">
+	<hr class="hr-3 eventures-bg-color" />
+	<table class="table w-75 mx-auto table-hover">
+		<thead>
+			<tr class="row font-weight-bold">
+				<th class="col-md-1">#</th>
+				<th class="col-md-6">Username</th>
+				<th class="col-md-3">Role</th>
+				<th class="col-md-2">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			@{ int counter = 1; }
+
+			@foreach (var user in Model)
+			{
+				<tr class="row">
+					<td class="col-md-1">@(counter++)</td>
+					<td class="col-md-6">@user.Username</td>
+					<td class="col-md-3">@user.Role</td>
+					<td class="col-md-2">
+						<form method="post" asp-action="ChangeUserRole">
+							<input name="userId" value="@user.Id" hidden />
+							<div class="form-row">
+								<button type="submit" class="btn eventures-bg-color">@(user.Role == "ADMIN" ? "Demote" : "Promote")</button>
+							</div>
+						</form>
+					</td>
+				</tr>
+			}
+
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,103 @@
+a {
+	color: #5786bA;
+}
+
+footer, .jumbotron {
+	margin-left: 7%;
+	margin-right: 7%;
+}
+
+label {
+	font-weight: bold;
+}
+
+.checkbox label {
+	padding-left: 0;
+}
+
+.navbar {
+	padding-right: 7%;
+	padding-left: 7%;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-right: 0;
+	margin-left: 0;
+	border: 0;
+	text-align: left;
+}
+
+.navbar-brand {
+	display: block;
+	height: auto;
+	padding-left: 12px;
+	padding-right: 0;
+	padding-bottom: 15px;
+	margin: 0;
+}
+
+.navbar-collapse {
+	padding-left: 0;
+	padding-right: 24px;
+	border: 0;
+	margin-left: 8px;
+}
+
+.navbar-nav > li > a {
+	padding-top: 7px;
+}
+
+.nav-link {
+	margin-left: 8px;
+	padding-left: 0;
+}
+
+.app-sizing {
+	width: 86%;
+}
+
+.half-width {
+	width: 50%;
+}
+
+.hr-1 {
+	height: 1px;
+	border: 0;
+}
+
+.hr-2 {
+	height: 2px;
+	border: 0;
+}
+
+.hr-3 {
+	height: 3px;
+	border: 0;
+}
+
+.eventures-bg-color {
+	background-color: #AFEEEE;
+	color: #000000;
+}
+
+.nav-link-dark {
+	color: #000000;
+	font-weight: bold;
+}
+
+.bg-color-grey {
+	background-color: lightslategrey;
+}
+
+.text-color-grey {
+	color: lightslategrey;
+}
+
+.table-hover > tbody > tr:hover {
+	background-color: #AFEEEE;
+	color: #F8F8FF;
+}
+
+tr.row {
+	margin-left: 0;
+	margin-right: 0;
+}

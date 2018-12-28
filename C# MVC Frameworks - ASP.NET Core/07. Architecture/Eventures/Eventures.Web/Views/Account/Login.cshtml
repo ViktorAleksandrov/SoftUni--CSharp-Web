@@ -1,0 +1,42 @@
+﻿@model LoginUserBindingModel
+
+@{
+	ViewData["Title"] = "Login";
+}
+
+<div class="container text-center">
+	<h2 class="font-weight-bold my-2">@ViewData["Title"]</h2>
+	<div class="row text-center">
+		<div class="col-md-4 offset-md-4">
+			<form class="mx-auto" method="post">
+				<hr class="hr-3 eventures-bg-color" />
+				<div class="form-group">
+					<label asp-for="Username"></label>
+					<input asp-for="Username" class="form-control" placeholder="Username...">
+					<span asp-validation-for="Username" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Password"></label>
+					<input asp-for="Password" class="form-control" placeholder="Password...">
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+				<div class="d-flex justify-content-center mb-2">
+					<button type="submit" class="btn eventures-bg-color">@ViewData["Title"]</button>
+				</div>
+			</form>
+			<div class="text-center mb-1">
+				<a href="">Forgot your password?</a>
+			</div>
+			<div>
+				<a asp-controller="Account" asp-action="Register">Register as a new user</a>
+			</div>
+			<hr class="hr-3 eventures-bg-color" />
+			<form asp-action="ExternalLogin" method="post">
+				<div class="d-flex justify-content-center">
+					<button type="submit" class="btn eventures-bg-color" name="provider" value="Facebook" title="Log in using your Facebook account">Facebook</button>
+				</div>
+			</form>
+			<hr class="hr-3 eventures-bg-color" />
+		</div>
+	</div>
+</div>
