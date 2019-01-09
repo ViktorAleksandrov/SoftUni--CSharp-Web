@@ -1,0 +1,49 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+
+@model IPagedList<AllEventsViewModel>
+
+@{
+	ViewData["Title"] = "All Events";
+}
+
+<h3 class="text-center mb-1 font-weight-bold">@ViewData["Title"]</h3>
+<div class="text-center text-danger">@TempData["Error"]</div>
+<div class="container-fluid app-sizing px-0">
+	<hr class="hr-3 eventures-bg-color" />
+	<table class="table mx-auto table-hover">
+		<thead>
+			<tr class="row font-weight-bold">
+				<th class="col-md-1">#</th>
+				<th class="col-md-2">Name</th>
+				<th class="col-md-2">Start</th>
+				<th class="col-md-2">End</th>
+				<th class="col-md-5">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			@for (int i = 0; i < Model.Count; i++)
+			{
+				int counter = i + 1 + (Model.PageNumber - 1) * Model.PageSize;
+
+				var eventureEvent = Model[i];
+
+				<tr class="row">
+					<th class="col-md-1">@(counter)</th>
+					<td class="col-md-2">@eventureEvent.Name</td>
+					<td class="col-md-2">@eventureEvent.Start</td>
+					<td class="col-md-2">@eventureEvent.End</td>
+					<td class="col-md-5">
+						<partial name="_CreateOrderPartial" model="@new CreateOrderBindingModel { EventId = eventureEvent.Id }" />
+					</td>
+				</tr>
+			}
+
+		</tbody>
+	</table>
+	<hr class="hr-3 eventures-bg-color" />
+	<div class="pagination justify-content-center">
+		@Html.PagedListPager(Model, page => Url.Action("All", new { page }))
+	</div>
+</div>
